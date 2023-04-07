@@ -1,0 +1,118 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>john Doe | Front-end Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./images/avatar.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <!--Navigation Bar-->
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <h1><a href="#">John Doe</a></h1>
+            </div>
+
+            <!--Darkmode-Button-->
+            <p id="darkmode">Darkmode</p>
+            <label class="switch">
+                <input type="checkbox" id="toggleButton">
+                <span class="slider round"></span>
+            </label>
+
+            <!--Text and Links-->
+            <div class="homeContainer">
+                <div class="home">
+                    <h1>John Doe</h1>
+                    <h2>Front-end Developer</h2>
+                    <h3>You can contact me in belowed links!<br>also you can write me!</h3>
+                    <div class="contact">
+                        <a href="https://github.com/IlyasUnver" target="_blank"><i
+                                class="fa-brands fa-github fa-4x"></i></a>
+                        <a href="#" target="_blank"><i
+                                class="fa-brands fa-square-instagram fa-4x"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin fa-4x"></i></a>
+                    </div>
+                </div>
+                <img src="./images/avatar.jpg" alt="ilyas ünver">
+            </div>
+            <div class="copyright">
+                <p id="copyright">Desinged by <a
+                        href="https://www.instagram.com/ilyas.unver/"><span>Notalone.</span></a></p>
+            </div>
+        </div>
+
+        <!--Pop-Up-Contact-Form-->
+        <button id="btn">Write me!</button>
+        <div id="popup-container">
+            <div id="popup-form">
+                <h2 style="color:#d65a31; opacity: 1;" ,>Write Me!</h2>
+                <form action="https://formsubmit.co/856c722b05f97faaea8f9879b4213e27" method="POST">
+                    <!-- <form action="mailto:unverilyas@gmail.com"> -->
+                    <label for="name" style="color: #d65a31;">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email" style="color: #d65a31;">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message" style="color:#d65a31">Your message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit" id="send-button">Send</button>
+                </form>
+                <button id="close-button">Close</button>
+            </div>
+            <div class="popup-text">
+                <h2>Follow me on</h2>
+                <div class="links">
+                    <a href="https://github.com/IlyasUnver" target="_blank"><i
+                            class="fa-brands fa-github fa-4x"></i></a>
+                    <a href="#" target="_blank"><i
+                            class="fa-brands fa-square-instagram fa-4x"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin fa-4x"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+
+        // Toggle Script
+
+            function toggleBackground() {
+                var body = document.getElementsByClassName("container")[0];
+                var toggle = document.getElementById("toggleButton");
+                if (toggle.checked) {
+                    body.style.backgroundColor = "rgba(0, 0, 0, 0.70)";
+                } else {
+                    body.style.backgroundColor = 'rgba(0, 0, 0, 0.35)';
+                }
+            }
+            var toggle = document.getElementById("toggleButton");
+            toggle.addEventListener("click", toggleBackground);
+
+        // Pop-up Button and Script
+
+            const openButton = document.getElementById('btn');
+            const closeButton = document.getElementById('close-button');
+            const popupContainer = document.getElementById('popup-container');
+
+            openButton.addEventListener('click', () => {
+                popupContainer.style.display = 'block';
+            });
+
+            closeButton.addEventListener('click', () => {
+                popupContainer.style.display = 'none';
+            });
+
+        </script>
+</body>
+
+</html>
